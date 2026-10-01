@@ -185,6 +185,10 @@ class _HomePage2State extends State<HomePage2> {
                               ),
                               const SizedBox(height: 2),
 
+                  Text(
+                    "stok : ${item.stock}",
+                    style: const TextStyle(fontSize: 14, color: Colors.black87),
+                  ),
                               // Baris Harga Produk & Tombol Like
                               Row(
                                 mainAxisAlignment:
