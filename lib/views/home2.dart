@@ -3,11 +3,7 @@ import 'package:kuis_mobile_124240107/models/data.dart';
 import 'package:kuis_mobile_124240107/views/detail.dart';
 import 'package:kuis_mobile_124240107/views/home.dart';
 
-// ============================================================================
-// 📌 MODEL 2: TAMPILAN GRID 2 KOLOM (SEPERTI DI LAT_ANIMAL)
-// File ini dibuat sebagai cadangan/alternatif tampilan.
-// Untuk menggunakannya, cukup ganti `HomePage()` menjadi `HomePage2()` di root.dart!
-// ============================================================================
+
 class HomePage2 extends StatefulWidget {
   const HomePage2({super.key});
 
@@ -29,7 +25,7 @@ class _HomePage2State extends State<HomePage2> {
 
   @override
   Widget build(BuildContext context) {
-    // Filter pencarian dan kategori tetap aktif
+
     final filteredCatalog = catalog.where((product) {
       final matchesSearch = product.productName
           .toLowerCase()
@@ -41,9 +37,7 @@ class _HomePage2State extends State<HomePage2> {
 
     return Column(
       children: [
-        // --------------------------------------------------------------------
-        // 1. SEARCH BAR
-        // --------------------------------------------------------------------
+
         Padding(
           padding: const EdgeInsets.all(12.0),
           child: TextField(
@@ -62,9 +56,6 @@ class _HomePage2State extends State<HomePage2> {
           ),
         ),
 
-        // --------------------------------------------------------------------
-        // 2. FILTER KATEGORI (ChoiceChip Horizontal Scroll)
-        // --------------------------------------------------------------------
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           physics: const BouncingScrollPhysics(),
@@ -91,9 +82,7 @@ class _HomePage2State extends State<HomePage2> {
           ),
         ),
 
-        // --------------------------------------------------------------------
-        // 3. DAFTAR PRODUK MODEL GRID 2 KOLOM (Gaya lat_animal)
-        // --------------------------------------------------------------------
+
         Expanded(
           child: GridView.builder(
             padding: const EdgeInsets.all(12),
@@ -117,7 +106,7 @@ class _HomePage2State extends State<HomePage2> {
                       builder: (context) => DetailPage(product: item),
                     ),
                   );
-                  // Refresh saat kembali dari halaman detail
+
                   setState(() {});
                 },
                 child: Card(
@@ -131,7 +120,7 @@ class _HomePage2State extends State<HomePage2> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // BAGIAN ATAS: GAMBAR DENGAN HERO ANIMATION
+
                       Expanded(
                         flex: 5,
                         child: Hero(
@@ -153,7 +142,7 @@ class _HomePage2State extends State<HomePage2> {
                         ),
                       ),
 
-                      // BAGIAN BAWAH: INFORMASI TEKS PRODUK + TOMBOL LIKE
+
                       Expanded(
                         flex: 5,
                         child: Padding(
@@ -161,7 +150,7 @@ class _HomePage2State extends State<HomePage2> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              // Judul / Nama Produk
+
                               Text(
                                 item.productName,
                                 style: const TextStyle(
@@ -174,7 +163,6 @@ class _HomePage2State extends State<HomePage2> {
                               ),
                               const SizedBox(height: 2),
 
-                              // Tipe / Kategori
                               Text(
                                 item.type,
                                 style: TextStyle(
@@ -189,7 +177,7 @@ class _HomePage2State extends State<HomePage2> {
                     "stok : ${item.stock}",
                     style: const TextStyle(fontSize: 14, color: Colors.black87),
                   ),
-                              // Baris Harga Produk & Tombol Like
+
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -232,7 +220,6 @@ class _HomePage2State extends State<HomePage2> {
                               ),
                               const SizedBox(height: 4),
 
-                              // Tag Ukuran
                               Wrap(
                                 spacing: 4,
                                 runSpacing: 4,

@@ -6,7 +6,7 @@ void main() {
   runApp(const MainApp());
 }
 
-// Mengaktifkan fitur geser/drag menggunakan mouse (berguna saat dijalankan di Windows/Chrome/PC)
+
 class AppScrollBehavior extends MaterialScrollBehavior {
   @override
   Set<PointerDeviceKind> get dragDevices => {
